@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+
+	<!--  <bean id="bean" class="com.alvin.bean.Bean"></bean>-->
+
+
+	<!-- 使用静态工厂来创建 -->
+	<!-- <bean id="bean" class="com.alvin.bean.BeanFactory" factory-method="getBean"></bean> -->
+	<!-- 使用实利工厂 -->
+	<!-- <bean id="beanFactroy2" class="com.alvin.bean.BeanFactory2"></bean> -->
+	<!-- <bean id="bean2" factory-bean="beanFactroy2" factory-method="getBean2"></bean> -->
+	<!-- 使用set方法注入 -->
+	<!--  <bean id="book" class="com.alvin.book.Book">-->
+		<!-- 注入属性值 -->
+		<!--  <property name="bookName" value="三字经"></property>-->
+	<!-- </bean> -->
+	<bean id="dao" class="com.alvin.book.Dao"></bean>
+	<bean id="service" class="com.alvin.book.Service">
+		<property name="dao" ref="dao"></property>
+	</bean>
+	
+</beans>
